@@ -12,8 +12,12 @@
            let video = document.getElementById('video')
 
            
-            video.addEventListener("progress", (event) => {
-              video.muted = false
+            video.addEventListener("play", (event) => {
+              setTimeout(() => {
+                video.muted = false
+              }, 1000)
+              
+
             });
        
        //document.getElementById('autoplay').play();
