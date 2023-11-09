@@ -4,17 +4,17 @@
     <title>roll</title>
   </head>
   <body>
-      <video id="player" muted autoplay loop style="width:100%; display:block">
+      <video id="video" muted autoplay loop style="100%; display:block">
         <source src="https://shattereddisk.github.io/rickroll/rickroll.mp4" type="video/mp4">
      </video>
      
      <script>
-           let player = document.getElementById('player')
+           let video = document.getElementById('player')
 
-    if (player.paused) {
-        console.log("leberkäs")
-    }
-
+           
+            video.addEventListener("loadeddata", (event) => {
+              video.muted = false
+            });
        
        //document.getElementById('autoplay').play();
      </script>
