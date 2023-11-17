@@ -4,21 +4,26 @@
     <title>roll</title>
   </head>
   <body>
-      <video id="video" muted autoplay loop style="100%; display:block">
+      <video id="video" loop style="100%; display:block">
         <source src="https://shattereddisk.github.io/rickroll/rickroll.mp4" type="video/mp4">
      </video>
      
      <script>
            let video = document.getElementById('video')
 
+           let videoStartedOnce = false;
+           window.addEventListener("scroll", (event) => {
+             video.play();
+           });
+       
            
-            video.addEventListener("play", (event) => {
-              setTimeout(() => {
-                video.muted = false
-              }, 1000)
+//            video.addEventListener("play", (event) => {
+//              setTimeout(() => {
+//                video.muted = false
+//              }, 1000)
               
 
-            });
+            //});
        
        //document.getElementById('autoplay').play();
      </script>
