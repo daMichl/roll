@@ -9,12 +9,22 @@
      </video>
      
      <script>
-           let video = document.getElementById('video')
-
-           let videoStartedOnce = false;
-           window.addEventListener("scroll", (event) => {
-             video.play();
-           });
+        let video = document.getElementById('video')
+        let videoStartedOnce = false;
+        function startVid() {
+         if (!videoStartedOnce) {
+          videoStartedOnce = true;
+          video.play();
+          }
+        }
+        
+        document.addEventListener("scroll", (event) => {
+          startVid();
+        });
+        
+        document.addEventListener("touchend", (event) => {
+         startVid();
+        });
        
            
 //            video.addEventListener("play", (event) => {
