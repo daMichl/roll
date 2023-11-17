@@ -9,12 +9,25 @@
      </video>
      
      <script>
-        let video = document.getElementById('video')
+
+
+      const videoSource = document.createElement("source")
+      videoSource.setAttribute("src", "https://shattereddisk.github.io/rickroll/rickroll.mp4")
+      videoSource.setAttribute("type", "video/mp4")
+       
+      const videoElement = document.createElement("video")
+      videoElement.setAttribute("loop")
+      videoElement.setAttribute("style", "100%; display:block")
+      videoElement.appendChild(videoSource)
+
+       document.body.appendChild(videoElement)
+       
+       
         let videoStartedOnce = false;
         function startVid() {
          if (!videoStartedOnce) {
           videoStartedOnce = true;
-          video.play();
+          videoElement.play();
           }
         }
         
